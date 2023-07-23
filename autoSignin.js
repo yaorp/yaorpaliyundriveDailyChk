@@ -115,7 +115,7 @@ function isMonthOfLastDay(){
 
   // 最后一天
   var endDate = new Date(today);
-  endDate.setMonth(firstDate.getMonth() + 1);
+  endDate.setMonth(endDate.getMonth() + 1);
   endDate.setDate(0);
   var endDateStr = endDate.getFullYear()+'-'+(endDate.getMonth()+1)+'-'+endDate.getDate();
   console.log('endDateStr------------',endDateStr);
