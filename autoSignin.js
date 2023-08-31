@@ -108,20 +108,18 @@ function sign_in(access_token, remarks) {
 }
 
 function isMonthOfLastDay(){
-  // 当天
+   // 当天
   var today = new Date();
-  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-  console.log('date------------',date);
+  console.log('today------------',today);
 
   // 最后一天
-  var endDate = new Date(today);
-  endDate.setMonth(endDate.getMonth() + 1);
-  endDate.setDate(0);
-  var endDateStr = endDate.getFullYear()+'-'+(endDate.getMonth()+1)+'-'+endDate.getDate();
-  console.log('endDateStr------------',endDateStr);
+  var endDate = new Date(today.getFullYear(),today.getMonth()+1,'0');
+  console.log('endDate------------',endDate);
 
-
-  if(date === endDateStr) {
+  if(today.getFullYear() === endDate.getFullYear() 
+  && today.getMonth() === endDate.getMonth()
+  && today.getDate() === endDate.getDate()
+  ) {
       console.log('------------true');
       return true;
   }else{
